@@ -11,5 +11,7 @@ https://www.docker.com/
 Dozzle - lightweight live container log monitoring
 https://hub.docker.com/r/amir20/dozzle
 
+Series playlist: https://www.youtube.com/playlist?list=PLyc_9Vs-afxwvD_4HnyswaIizGPS9BMeN
+
 Files available on github: https://bit.ly/4sAiwk3
 My tracks on Soundcloud: https://bit.ly/3Z7e6Uc
