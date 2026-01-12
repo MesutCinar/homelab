@@ -1,5 +1,3 @@
-name: homelab-core
-
 networks:
   homelab-net:
     driver: bridge
@@ -8,12 +6,34 @@ services:
   dozzle:
     image: amir20/dozzle:latest
     restart: unless-stopped
-    
-    ports:
-      - "10000:8080"
-    
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-    
     networks:
       - homelab-net
+    labels:
+      - "traefik.enable=true"
+      # Make sure to put this also into your hosts file with the IP address of the NAS
+      - "traefik.http.routers.dozzle.rule=Host(`dozzle.nas.local`)"
+      - "traefik.http.routers.dozzle.entrypoints=web"
+      - "traefik.http.services.dozzle.loadbalancer.server.port=8080"
+
+  traefik:
+    image: traefik:latest
+    restart: unless-stopped
+    command:
+      - --log.level=INFO
+      - --entrypoints.web.address=:80
+      - --api.dashboard=true
+      - --providers.docker=true
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - homelab-net
+    labels:
+      - "traefik.enable=true"
+      # Traefik Dashboard-Router
+      - "traefik.http.routers.dashboard.rule=Host(`nas.local`)"
+      - "traefik.http.routers.dashboard.entrypoints=web"
+      - "traefik.http.routers.dashboard.service=api@internal"
