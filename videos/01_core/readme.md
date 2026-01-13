@@ -1,6 +1,7 @@
-Video title: Set up your homelab core
+# Video title
+Set up your homelab core - part 1 - dozzle
 
-Video description:
+# Video description
 
 In the homelab core we will create a basic setup with docker containing
 a named network that we will use for the homelab and a very useful

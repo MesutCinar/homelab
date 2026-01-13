@@ -1,5 +1,5 @@
 # Video title
-Set up your homelab core - part 2
+Set up your homelab core - part 2 - traefik
 
 # Video description
 

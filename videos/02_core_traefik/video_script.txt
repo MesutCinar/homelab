@@ -1,0 +1,25 @@
+- Open NAS admin console 
+	with IP and port
+
+- Show dozzle UI from video series - part 1
+	with IP and port
+
+- Open in NAS console: 
+	Control panel - Device connection - Portal settings
+	Switch off port forwarding of NAS for ports 80 and 443
+
+- Open docker UI in NAS admin console
+	open project "core"
+	switch to project configuration
+
+- Configure traefik as second service
+	use traefik.nas.local as host
+
+- Add traefik configuration to dozzle
+	use dozzle.nas.local as host
+
+- Start docker project
+
+- Show traefik.nas.local in a new browser tab
+
+- Show dozzle.nas.local in a new browser tab
