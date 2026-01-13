@@ -16,7 +16,7 @@ The intent is to make it easy to follow the setup of the homelab for everyone.
 Therefore the series starts by creating a simple core to have something visible
 and still useful very fast.
 
-1.) Setting up your homelab core
+## Setting up your homelab core - part 1 - dozzle
 
 In the core we will setup the named network "homelab-net" that we will use for
 the homelab and a very useful lightweight application named Dozzle to have a 
@@ -27,7 +27,17 @@ https://hub.docker.com/r/amir20/dozzle
 
 Youtube: https://youtu.be/44iY33P2U-4
 
+## Setting up your homelab core - part 2 - traefik
+
+In the second part we will add traefik to the homelab core.
+
+Traefik
+https://traefik.io/traefik
+
+Youtube: https://youtu.be/Wv8jXoG8uFw
+
+## Links
+
 Youtube series playlist: https://www.youtube.com/playlist?list=PLyc_9Vs-afxwvD_4HnyswaIizGPS9BMeN
 
 My tracks on Soundcloud: https://bit.ly/3Z7e6Uc
-
