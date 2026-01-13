@@ -1,0 +1,37 @@
+
+
+- Open DOS terminal
+
+- cd C:\konsologe
+
+- open wsl -d UbuntuLab
+
+
+- sudo apt-get install apache2-utils
+
+- htpasswd -cB ./homelab.htpasswd admin   # Erstellt die Datei mit Benutzer "admin"
+
+-c  → erstelle die Datei (nur beim ersten Mal)
+-B  → bcrypt‑Hash (empfohlen)
+
+- V:
+- cd core
+- mkdir users
+- copy C:\konsologe\homelab.htpasswd V:\core\users
+
+
+services:
+  dozzle:
+    labels:
+	  ...
+	  - "traefik.http.routers.dozzle.middlewares=auth"
+
+  traefik:
+    ...
+    volumes:
+      ...
+      - ./users/homelab.htpasswd:/etc/traefik/.htpasswd:ro
+	labels:
+	  - "traefik.http.middlewares.auth.basicauth.usersfile=/etc/traefik/.htpasswd"
+	  ...
+      - "traefik.http.routers.dashboard.middlewares=auth"

@@ -6,11 +6,10 @@ Set up your homelab core - part 2 - traefik
 In the homelab core we are extending the basic setup with traefik.
 
 Make sure that you add the IP address of your NAS to your hosts file In
-
 C:\Windows\System32\drivers\etc\hosts
 
 e.g.
-192.168.178.42	nas.local dozzle.nas.local
+192.168.178.250  nas.local traefik.nas.local dozzle.nas.local
 
 https://www.docker.com/
 

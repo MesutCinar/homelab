@@ -36,6 +36,12 @@ https://traefik.io/traefik
 
 Youtube: https://youtu.be/Wv8jXoG8uFw
 
+## Setting up your homelab core - part 3 - basic authentication
+
+In the third part we will add basic authentication to the tools
+we added before to the homelab.
+
+
 ## Links
 
 Youtube series playlist: https://www.youtube.com/playlist?list=PLyc_9Vs-afxwvD_4HnyswaIizGPS9BMeN
