@@ -41,6 +41,7 @@ Youtube: https://youtu.be/Wv8jXoG8uFw
 In the third part we will add basic authentication to the tools
 we added before to the homelab.
 
+https://youtu.be/WhymXv6Wdss
 
 ## Links
 

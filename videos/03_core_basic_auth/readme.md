@@ -3,9 +3,12 @@ Set up your homelab core - part 3 - basic authentication
 
 # Video description
 
-We will add basic authentication to the tools we already have in the homelab core.
+In this session we will add basic authentication to the tools we 
+already have in the homelab core (dozzle and traefik).
 
-For WSL installation instructions please refer to my videos related to WSL.
+We will use WSL to create a password file with a use. For WSL 
+installation instructions please refer to my videos related to WSL
+or other documentation.
 
 https://learn.microsoft.com/de-de/windows/wsl/install
 
