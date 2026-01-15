@@ -1,0 +1,9 @@
+
+
+Create new docker project devtools
+
+Add mailpit configuration
+
+Test functionality with Powershell
+
+Send-MailMessage -From 'me@lab.com' -To 'you@lab.com' -Subject 'Testmail' -Body 'Hello world.' -SmtpServer 'nas.local' -Port 1025
