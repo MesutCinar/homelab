@@ -1,3 +1,5 @@
+name: homelab-devtools
+
 networks:
   homelab-devtools-net:
     driver: bridge
@@ -9,10 +11,8 @@ services:
     ports:
       - "1025:1025"
       - "8025:8025"
-    environment:
-      # MAILPIT_UI_HOSTNAME=mailpit.local
     networks:
-      - homelab-net
+      - homelab-devtools-net
     labels:
       - "traefik.enable=true"
       # Make sure to put this also into your hosts file with the IP address of your NAS
