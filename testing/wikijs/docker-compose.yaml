@@ -1,0 +1,32 @@
+services:
+  wikijs:
+    image: requarks/wiki:latest
+    container_name: wikijs
+    environment:
+      - DB_TYPE=postgres
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=wikijs
+      - DB_PASS=supersecret
+      - DB_NAME=wikijs
+      - SECRET=changeme
+    volumes:
+      - ./data:/opt/wiki/data
+    depends_on:
+      - db
+    labels:
+      - "traefik.enable=true"
+      # Make sure to put this also into your hosts file with the IP address of your NAS
+      - "traefik.http.routers.wikijs.rule=Host(`wikijs.nas.local`)"
+      - "traefik.http.routers.wikijs.entrypoints=web"
+      - "traefik.http.services.wikijs.loadbalancer.server.port=3000"
+
+  db:
+    image: postgres:13-alpine
+    container_name: wikijs_db
+    environment:
+      POSTGRES_USER: wikijs
+      POSTGRES_PASSWORD: supersecret
+      POSTGRES_DB: wikijs
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
