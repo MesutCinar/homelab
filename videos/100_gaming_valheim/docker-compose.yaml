@@ -1,0 +1,24 @@
+name: gaming-valheim
+
+networks:
+  gaming-valheim-net:
+    driver: bridge
+
+services:
+  valheim:
+    image: lloesche/valheim-server
+    restart: unless-stopped
+    networks:
+      - gaming-valheim-net
+    environment:
+      - SERVER_NAME=Valheim lab server
+      - WORLD_NAME=Labtopia
+      - SERVER_PASS=secretlab
+    volumes:
+      - "./valheim-server/config:/config"
+      - "./valheim-server/data:/opt/valheim"
+    ports:
+      - "2456-2457:2456-2457/udp"
+    cap_add:
+      - SYS_NICE
+    stop_grace_period: 120s
